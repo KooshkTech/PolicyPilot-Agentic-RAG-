@@ -7,10 +7,12 @@ class FakeEmbedder:
     """Deterministic offline embeddings; tests storage/filtering, not model quality."""
 
     def encode(self, texts, **kwargs):
-        return np.array([
-            [float("supply" in text.lower()), float("flour" in text.lower()), 0.1]
-            for text in texts
-        ])
+        return np.array(
+            [
+                [float("supply" in text.lower()), float("flour" in text.lower()), 0.1]
+                for text in texts
+            ]
+        )
 
 
 def test_upsert_and_search_returns_relevant_result(tmp_path):

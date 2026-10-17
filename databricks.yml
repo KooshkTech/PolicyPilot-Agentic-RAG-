@@ -1,8 +1,7 @@
 # Databricks Asset Bundle for PolicyPilot.
 #
-# `dev` target is real and deployable (workspace, Unity Catalog, Key Vault, GitHub OIDC
-# all provisioned — see README "Status"). `staging`/`prod` hosts and run-as service
-# principals are still placeholders for a future milestone.
+# Configure your own workspace and admin before deploying dev.
+# Staging/prod remain templates and are disabled in the manual CD workflow.
 
 bundle:
   name: policypilot

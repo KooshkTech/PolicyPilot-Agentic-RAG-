@@ -57,10 +57,9 @@ with st.sidebar:
     st.write(f"PP_ENV = `{settings.env}`")
 
 if llm is None:
-    st.error(
-        "GROQ_API_KEY is not set. Copy .env.example to .env and add your key, then restart."
-    )
+    st.error("GROQ_API_KEY is not set. Copy .env.example to .env and add your key, then restart.")
     st.stop()
+
 
 def _render_sources(results) -> None:
     """Map each [n] citation in the answer back to the filing it actually came from."""
@@ -104,6 +103,4 @@ if question := st.chat_input("Ask a question about the ingested filings..."):
         if not grounded:
             st.caption("⚠️ No grounded citation found — refused rather than guessing.")
         _render_sources(results)
-    st.session_state.history.append(
-        {"role": "assistant", "content": answer, "sources": results}
-    )
+    st.session_state.history.append({"role": "assistant", "content": answer, "sources": results})

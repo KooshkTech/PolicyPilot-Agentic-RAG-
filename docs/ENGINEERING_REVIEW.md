@@ -34,7 +34,9 @@ The metadata lookup is recorded in state but is not separately routed into answe
 ## Verification
 
 - 32 tests passed locally on Python 3.12.
-- Ruff static checks passed.
+- Ruff static checks and Python compilation of src/scripts passed.
+- CD reads DATABRICKS_ADMIN_USER from GitHub environment variables; manual evaluation
+  reads SEC_EDGAR_USER_AGENT from variables instead of using a fake contact.
 - Tests cover the real Chroma storage backend with synthetic embeddings, the agent
   with fake LLM responses, failed index writes, environment validation, chunking,
   and SEC contact/retry configuration.

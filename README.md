@@ -106,6 +106,8 @@ uv run ruff check .
 6. Validate access grants, gateway policies, citations, and refusal behavior in your
    own workspace before exposing the app to users.
 
+Set the `DATABRICKS_ADMIN_USER` GitHub environment variable for CD and the
+`SEC_EDGAR_USER_AGENT` variable (including your real contact email) for manual evaluation.
 Cloud evaluation runs only through manual CI workflow dispatch and requires secrets.
 Normal push/PR checks use deterministic offline retrieval tests (real Chroma storage,
 synthetic embeddings); these do not measure embedding relevance or model quality.

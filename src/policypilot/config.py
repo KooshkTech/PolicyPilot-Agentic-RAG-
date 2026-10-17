@@ -19,8 +19,26 @@ CHROMA_DIR = DATA_DIR / "chroma"
 # (one 10-K each) to build and test retrieval at meaningful scale without pulling the
 # whole EDGAR corpus or adding new metadata dimensions (fiscal years, filing types).
 DEFAULT_TICKERS = [
-    "AAPL", "MSFT", "JPM", "GOOGL", "AMZN", "META", "NVDA", "TSLA", "JNJ", "V",
-    "WMT", "CVX", "PG", "HD", "BAC", "KO", "PEP", "CSCO", "INTC", "DIS",
+    "AAPL",
+    "MSFT",
+    "JPM",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "NVDA",
+    "TSLA",
+    "JNJ",
+    "V",
+    "WMT",
+    "CVX",
+    "PG",
+    "HD",
+    "BAC",
+    "KO",
+    "PEP",
+    "CSCO",
+    "INTC",
+    "DIS",
 ]
 
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"

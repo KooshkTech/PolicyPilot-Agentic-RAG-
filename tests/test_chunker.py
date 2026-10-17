@@ -28,9 +28,6 @@ def test_chunk_filing_short_text_returns_single_chunk():
     assert chunks[0].text == "short filing text"
 
 
-
-
-
 @pytest.mark.parametrize("size,overlap", [(0, 0), (-1, 0), (5, 5), (5, 6), (5, -1)])
 def test_invalid_chunk_settings_fail_instead_of_looping(size, overlap):
     with pytest.raises(ValueError):

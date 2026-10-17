@@ -85,14 +85,15 @@ def test_agent_scopes_retrieval_to_resolved_ticker():
     assert store.last_ticker == "AAPL"
 
 
-
-
-@pytest.mark.parametrize("answer", [
-    "Invented source [999].",
-    "Invalid zero [0].",
-    "Cited statement [1]. Uncited claim.",
-    "Uncited claim. Cited statement [1].",
-])
+@pytest.mark.parametrize(
+    "answer",
+    [
+        "Invented source [999].",
+        "Invalid zero [0].",
+        "Cited statement [1]. Uncited claim.",
+        "Uncited claim. Cited statement [1].",
+    ],
+)
 def test_invalid_or_incomplete_citations_are_rejected(answer):
     result = ask(FakeLLM(answer), FakeStore([SAMPLE_RESULT]), "Apple risks?")
     assert result["final_answer"] == REFUSAL_MESSAGE

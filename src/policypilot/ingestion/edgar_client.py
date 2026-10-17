@@ -23,8 +23,11 @@ class EdgarClient:
             raise ValueError("SEC_EDGAR_USER_AGENT must include a real contact email")
         self._session = requests.Session()
         retry = Retry(
-            total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["GET"], respect_retry_after_header=True,
+            total=3,
+            backoff_factor=1,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["GET"],
+            respect_retry_after_header=True,
         )
         self._session.mount("https://", HTTPAdapter(max_retries=retry))
         self._session.headers.update({"User-Agent": user_agent})
