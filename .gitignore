@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+data/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mlruns/
+mlruns/
+mlflow.db
+.DS_Store
+dist/
+build/
